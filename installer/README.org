@@ -1,0 +1,42 @@
+* TODO figure out how wix add scheduled tasks
+
+Need to add this as custom installer action...need to find out how to do that too.
+
+#+BEGIN_EXAMPLE
+$A = New-ScheduledTaskAction -Execute 'C:\Windows\system32\wscript.exe' `
+ -WorkingDirectory "C:\Program Files (x86)\MyCompanyName\MyProductName" `
+ -Argument 'run_once.vbs'
+$T = New-ScheduledTaskTrigger `
+ -Once `
+ -At (Get-Date) `
+ -RepetitionInterval (New-TimeSpan -Minutes 1)
+$P = New-ScheduledTaskPrincipal "Administrator"
+$S = New-ScheduledTaskSettingsSet
+$D = New-ScheduledTask -Action $A -Principal $P -Trigger $T -Settings $S
+Register-ScheduledTask T1 -InputObject $D -Force
+#+END_EXAMPLE
+
+* workflow1
+
+#+BEGIN_EXAMPLE
+make clean
+make build
+make install
+make test_install # test install
+
+make clean
+make build
+make uninstall
+make test_uninstall # test uninstall
+
+git add product.wxs
+#+END_EXAMPLE
+
+* workflow: sped up a bit
+
+#+BEGIN_EXAMPLE
+make in ti # test install
+make un tu # test uninstall
+make clean
+git add product.wxs
+#+END_EXAMPLE
