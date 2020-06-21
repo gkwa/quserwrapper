@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="PUT-GUID-HERE" Language="1033" Manufacturer="PUT-COMPANY-NAME-HERE" Name="PUT-PRODUCT-NAME-HERE" UpgradeCode="PUT-GUID-HERE" Version="1.0.0.0">
+        <Package Compressed="yes" InstallerVersion="200" />
+        <Directory Id="TARGETDIR" Name="SourceDir" />
+        <Feature Id="ProductFeature" Level="1" Title="PUT-FEATURE-TITLE-HERE">
+            <ComponentGroupRef Id="myCG" />
+        </Feature>
+        <Media Id="1" Cabinet="product.cab" EmbedCab="yes" />
+    </Product>
+    <Fragment>
+        <ComponentGroup Id="myCG">
+            <Component Id="cmp15A297919435B06B814893C0985672B0" Directory="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Guid="*">
+                <File Id="fil37981EFA60498602EA8578D95502DCC9" KeyPath="yes" Source="SourceDir\.git\COMMIT_EDITMSG" />
+            </Component>
+            <Component Id="cmp42E6C9DD5E7B0D2AD002BC5BE1B8CCC4" Directory="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Guid="*">
+                <File Id="fil02CEB73A09EBAF9256725A7D69C6262F" KeyPath="yes" Source="SourceDir\.git\config" />
+            </Component>
+            <Component Id="cmpB5F75DE7083CB515F7E3765D68E6A8D2" Directory="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Guid="*">
+                <File Id="fil0112900AF8AC24E0D4560BEEEBA8A540" KeyPath="yes" Source="SourceDir\.git\description" />
+            </Component>
+            <Component Id="cmp950D356C42A36CE81F9913BB8082E54E" Directory="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Guid="*">
+                <File Id="fil5878885359709272C9F47EF1AC8CA6CE" KeyPath="yes" Source="SourceDir\.git\HEAD" />
+            </Component>
+            <Component Id="cmpA826CC5AEA1F4CDBB9A9F78A9959CDA6" Directory="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Guid="*">
+                <File Id="filA8E5CC9599EA94854B4393AF59D43A79" KeyPath="yes" Source="SourceDir\.git\index" />
+            </Component>
+            <Component Id="cmpBA5E9B0021FD39CD71923BEE305635E4" Directory="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Guid="*">
+                <File Id="filDD48DEB7CA195771DE4690A7586F5DFD" KeyPath="yes" Source="SourceDir\.git\MERGE_RR" />
+            </Component>
+            <Component Id="cmpB8C9D2BEA24735D723DF8FE502234176" Directory="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Guid="*">
+                <File Id="fil08FDCEE2207F433B3ABDE4A607A6AC1A" KeyPath="yes" Source="SourceDir\.git\ORIG_HEAD" />
+            </Component>
+            <Component Id="cmp45A128307E51ADF334C04FE79BF253A8" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil07744026CD677DCC50D5BE9B559BE5EB" KeyPath="yes" Source="SourceDir\.git\hooks\applypatch-msg.sample" />
+            </Component>
+            <Component Id="cmp13839D1835898D77E3127C3AABDFD696" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil0867047101A3D9D74D793BE7CAB36F1E" KeyPath="yes" Source="SourceDir\.git\hooks\commit-msg.sample" />
+            </Component>
+            <Component Id="cmpCB785F667790E158041B01E96D958FFA" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="filEB9A21F97432EBCD6E8A50440238C233" KeyPath="yes" Source="SourceDir\.git\hooks\fsmonitor-watchman.sample" />
+            </Component>
+            <Component Id="cmpCE8E1A2E40E3E49B2D7D7CFE8AB2615D" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil796771C2A88B10EB2C103E2699B82639" KeyPath="yes" Source="SourceDir\.git\hooks\post-update.sample" />
+            </Component>
+            <Component Id="cmp563F77273435C7EF07BDDF3DC900E622" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil777980080DB78935403491485D33C45C" KeyPath="yes" Source="SourceDir\.git\hooks\pre-applypatch.sample" />
+            </Component>
+            <Component Id="cmpEF8D552DBA58BBD6756AA9D778230A32" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="filC96E45DB440582BF30B8DE284D2609C7" KeyPath="yes" Source="SourceDir\.git\hooks\pre-commit.sample" />
+            </Component>
+            <Component Id="cmp272DB3E6E78D7AB5E6A95983A655C424" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil18F4E2AA30465F962FAA9973D84770BE" KeyPath="yes" Source="SourceDir\.git\hooks\pre-merge-commit.sample" />
+            </Component>
+            <Component Id="cmp664C484E4D4FE9093F4358AA3C64133C" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil2FB1F1445E122FC235C89EA871B65ABE" KeyPath="yes" Source="SourceDir\.git\hooks\pre-push.sample" />
+            </Component>
+            <Component Id="cmpD55F063C95D0A3A1766804557AF9BE92" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil698D698BB5E167906779A855340A75D7" KeyPath="yes" Source="SourceDir\.git\hooks\pre-rebase.sample" />
+            </Component>
+            <Component Id="cmpC68690ECA084EBECC4DDB3EC7D4A2896" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="fil5C5A62BA38A3ECA8144B6CE111354F92" KeyPath="yes" Source="SourceDir\.git\hooks\pre-receive.sample" />
+            </Component>
+            <Component Id="cmp435C9F781E49541D8BBDA5F7C0989AE7" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="filF418DEAF13AF587E4F1B5BD14B16D192" KeyPath="yes" Source="SourceDir\.git\hooks\prepare-commit-msg.sample" />
+            </Component>
+            <Component Id="cmp419B7F39B7A138C77145F73F3271C3A8" Directory="dirB97B2C4EE12C8A963977385F908BD35A" Guid="*">
+                <File Id="filFF6D24AD5FFB74FA0DBC42E8469B45CF" KeyPath="yes" Source="SourceDir\.git\hooks\update.sample" />
+            </Component>
+            <Component Id="cmp37F575321F522EA4E83ABF624F932F0A" Directory="dir7A33702DED6F075433EE915ED78FABE1" Guid="*">
+                <File Id="fil0B1D48CB2181F2AB6DED82A47D2D060A" KeyPath="yes" Source="SourceDir\.git\info\exclude" />
+            </Component>
+            <Component Id="cmpA469A1D80E49944A60B7398D218E75CB" Directory="dirA2A12EA202601B1BCE2B070867E4C0A8" Guid="*">
+                <File Id="filE18647B489E5870E915EF0180F20FAAA" KeyPath="yes" Source="SourceDir\.git\logs\HEAD" />
+            </Component>
+            <Component Id="cmpB3B0588725DB4A54B9E89DF2AB295DA4" Directory="dir183C78DF52898588641FBD780C2562A5" Guid="*">
+                <File Id="fil310775609213412A8F88B43ACD80FF6D" KeyPath="yes" Source="SourceDir\.git\logs\refs\heads\master" />
+            </Component>
+            <Component Id="cmp52FBB8798C5BA923C0275E6D1B4A71CF" Directory="dir220C9F85C78F57659491DCA88A113C01" Guid="*">
+                <File Id="fil9FA8DCDC0D49E30BB58431B45F0E1549" KeyPath="yes" Source="SourceDir\.git\objects\01\3b99c77331e5e12d8a193e459c323e7fed18af" />
+            </Component>
+            <Component Id="cmp974953697247AF07EB494BB0BE3C6985" Directory="dir220C9F85C78F57659491DCA88A113C01" Guid="*">
+                <File Id="filAFC9B4B31089EA23DCF38B055780A552" KeyPath="yes" Source="SourceDir\.git\objects\01\5ae92b8aa9e5aebb0e5f3b829fecf7b0d7b437" />
+            </Component>
+            <Component Id="cmp004BCC0A2C732EDF0FD91AC046FC8185" Directory="dir551B96E5F59760DA73CB5F6CC842535C" Guid="*">
+                <File Id="fil3AB4600BFB4FE58F747E3785618536B8" KeyPath="yes" Source="SourceDir\.git\objects\0b\0618153ed840ec3f8e113eaebcce4a6fb23552" />
+            </Component>
+            <Component Id="cmp192BEE4C4CFFFCE08BFC0379DF7FA8A7" Directory="dirC11AEED248F1BDBF01A90AA189035690" Guid="*">
+                <File Id="filAEF16933FEA3DBC2BBE4005DC8F9C2C8" KeyPath="yes" Source="SourceDir\.git\objects\11\ca2cbd92f7e3eb18662999ca8ade76eb0096b2" />
+            </Component>
+            <Component Id="cmp12BF7722EEDE3EF1E3DA428153AA4E22" Directory="dirA61D185F1F8EF3F22939E712E056A369" Guid="*">
+                <File Id="fil4357644B20F8B87F259FC5496D178D6D" KeyPath="yes" Source="SourceDir\.git\objects\15\7a33862ac40116a0e554c458446309efc6b5fd" />
+            </Component>
+            <Component Id="cmp02EE65E78EAC2C401D10AD32633E084B" Directory="dir7BBFA08871382B0076D36F4E63755928" Guid="*">
+                <File Id="fil7AF197B7E6F7A96B7E65CCB208732B84" KeyPath="yes" Source="SourceDir\.git\objects\1b\6811095e2f465bf147827cfe0bb1499fce3811" />
+            </Component>
+            <Component Id="cmp90FF90D13214D804B10B4F1FD85AB42F" Directory="dir1081AE01A268FE0F40B633524A64B275" Guid="*">
+                <File Id="filCD6E76AC2E929B955FB7E05857F840A7" KeyPath="yes" Source="SourceDir\.git\objects\21\cd19e4f46a9810e0b815af1025d6e1d51c455d" />
+            </Component>
+            <Component Id="cmp9183894BED09DB060B01AA0242BA072C" Directory="dirEDC0D85EF2195FCF5396B13D95960601" Guid="*">
+                <File Id="filF1C9BF19447FDE708259CAA9A59BEC36" KeyPath="yes" Source="SourceDir\.git\objects\25\24db87617037a565d0400715d3b55c65db1f41" />
+            </Component>
+            <Component Id="cmpCCBC41BEE8453F023D70D12A75618040" Directory="dirEDC0D85EF2195FCF5396B13D95960601" Guid="*">
+                <File Id="fil4F5C522179F141760B413A33C6253FBE" KeyPath="yes" Source="SourceDir\.git\objects\25\8d411806eb6b50642b201e7cfb00649a5193f6" />
+            </Component>
+            <Component Id="cmp162D221C1404A8C5ADD5DB256D050BED" Directory="dirFB03C1957AB5AEA007E721383276012A" Guid="*">
+                <File Id="fil470D207A8DA8A502BAEB9EC30B7FFE9A" KeyPath="yes" Source="SourceDir\.git\objects\26\8f0308f6cdf7df550c895ec102db70ee621851" />
+            </Component>
+            <Component Id="cmp701E3725016581450F549CD2BC54CC82" Directory="dirE3F98F74E0A7093C738183F9B000B18D" Guid="*">
+                <File Id="fil49F31F276F98EBA41E252A6193D59A23" KeyPath="yes" Source="SourceDir\.git\objects\27\feedc7e9cdc493c453ad512f6dca8cc1fc36fe" />
+            </Component>
+            <Component Id="cmpD81B208CF2C57BAC5E23DCAC3D9247D5" Directory="dirE45D76CDEA2588A5D5EB0078E9CC5B08" Guid="*">
+                <File Id="fil38369B484E51B435ACED04A17F431349" KeyPath="yes" Source="SourceDir\.git\objects\3f\1c78c827553a360b24d8654606d18662ec82df" />
+            </Component>
+            <Component Id="cmpA7F374955C158FAF350BE91EE59D129A" Directory="dirE45D76CDEA2588A5D5EB0078E9CC5B08" Guid="*">
+                <File Id="filFC30057F0A1A666B91C5A98AC8851108" KeyPath="yes" Source="SourceDir\.git\objects\3f\434517e9d0d367e37b0a25dfeefed0778dd3b3" />
+            </Component>
+            <Component Id="cmp9B9D7F0C2E368E430286F3666050AD5C" Directory="dir16A5EDDBF2F66AA38765B6790C7BB374" Guid="*">
+                <File Id="fil04322EB82BAB20EF15D7E7CF6798D9E0" KeyPath="yes" Source="SourceDir\.git\objects\41\423bf8b743bb9a07e9fb01719f1050aeaf9520" />
+            </Component>
+            <Component Id="cmp477F99A468D7B4FF0BE8DF233269BCDE" Directory="dirBAEB1596F6931F7F7DA5E1CF9549C746" Guid="*">
+                <File Id="filC0465E6643429524594F5D3AE9699F98" KeyPath="yes" Source="SourceDir\.git\objects\52\378e9ab6899bc37e1b57d632a1b3b977c18d2a" />
+            </Component>
+            <Component Id="cmpAE99245C62D35AE8D4E5F9A076F55025" Directory="dirBD187F5E92F35F5E2640AA6B65462E78" Guid="*">
+                <File Id="fil60F3EBE7E9C05BF205AD13DA63D2E8DE" KeyPath="yes" Source="SourceDir\.git\objects\5b\1b7f7cd5943ddc59a46f407539d1091abbb85b" />
+            </Component>
+            <Component Id="cmp563F83C688D229C8425280348CDB9400" Directory="dir550001A824A1B1800AE79AC9B01D3C7C" Guid="*">
+                <File Id="filB815A300CFDB8875AB84441A5CBC70E9" KeyPath="yes" Source="SourceDir\.git\objects\61\9190e3f7e85f9969073cebdc159d72fe270241" />
+            </Component>
+            <Component Id="cmpB3FF7113AFFD8A886E11C013E519712A" Directory="dir550001A824A1B1800AE79AC9B01D3C7C" Guid="*">
+                <File Id="fil1602AF9821AA2159A2B34D60E106CD24" KeyPath="yes" Source="SourceDir\.git\objects\61\d1a8c0752b4366da8df0064e6f66fb78d431a3" />
+            </Component>
+            <Component Id="cmp91ABFE66217934417CF77EE23F718D89" Directory="dir1188BA494D717B6FD88A4905C918F7A3" Guid="*">
+                <File Id="fil3BF89B0813DA4468197A7A527651D05E" KeyPath="yes" Source="SourceDir\.git\objects\7d\547cf422449122fdfc91f5a799e034c4516fed" />
+            </Component>
+            <Component Id="cmp17BEF9853D9E9C31FF2485322F76C482" Directory="dirC9887F6AA27EEC5CF2980105687FEFD0" Guid="*">
+                <File Id="fil0F498C97B3D2D8B1E078D1127CC5EF04" KeyPath="yes" Source="SourceDir\.git\objects\87\eef74aa3d8515181ec5766691500b9feaaa1f5" />
+            </Component>
+            <Component Id="cmp52939888362141742AE9F93573049B40" Directory="dirDA26FE27B63636A8EE574E2E8179BB1F" Guid="*">
+                <File Id="fil9D0A0D70D9F422D1FE86C78213153AB0" KeyPath="yes" Source="SourceDir\.git\objects\8c\bdc8a2a4c8451c1296002403e47828ca7dace9" />
+            </Component>
+            <Component Id="cmpC252EAE8FD46AC95830667D5C8ED3A2C" Directory="dirCA11BADD8660B2EA6A9298AEBB8373F6" Guid="*">
+                <File Id="fil476E5646FB00712DFF20A39DC990F202" KeyPath="yes" Source="SourceDir\.git\objects\9a\eccd5e35fc3f03de0c0a7a6df662cbde36a97b" />
+            </Component>
+            <Component Id="cmp0052ABAA2913684598494CCEF3902C55" Directory="dir9005483E0FFA6D1D15EF088CED802E16" Guid="*">
+                <File Id="fil93C561A22021B08329314862278AB9DC" KeyPath="yes" Source="SourceDir\.git\objects\9c\2378da8965d660e53e691cf31ce8ae92f9ac8a" />
+            </Component>
+            <Component Id="cmpABD58F921DA57AA27EC4EDBDA422964A" Directory="dir1BCDA6B77969AC0A41404475C8B8C119" Guid="*">
+                <File Id="fil4BA57573B624FB84CB52B9112430EE35" KeyPath="yes" Source="SourceDir\.git\objects\ae\c346fa187f17521ff78a74f43bb957db22ae4a" />
+            </Component>
+            <Component Id="cmp8D56666002C4DE80ECEFBECABECB5A47" Directory="dir4CB20EB407D4234447732F791C8A19BB" Guid="*">
+                <File Id="fil3E6824BC268FB42C5F7EFA13F4B7581A" KeyPath="yes" Source="SourceDir\.git\objects\b5\403e4090539fe495b2a19a1964577d7f2aab1c" />
+            </Component>
+            <Component Id="cmp93F9F10F8426D542E91510C8F330D1F6" Directory="dir1F97BD14DD3FE1DAE09C8AB811BCB0FC" Guid="*">
+                <File Id="fil54D0AEB87F008776E6951143213A0515" KeyPath="yes" Source="SourceDir\.git\objects\b8\28f7ad26b9b21a4e3612fab15aaa11c5e0241b" />
+            </Component>
+            <Component Id="cmp6CD87BC8E6D521C23BC1CC34E0CB16F0" Directory="dir1F97BD14DD3FE1DAE09C8AB811BCB0FC" Guid="*">
+                <File Id="filF5CC90B55C8AA44B6E415DA574C5912A" KeyPath="yes" Source="SourceDir\.git\objects\b8\5e6d249f01ba2baca4762c668b2198c4b214f0" />
+            </Component>
+            <Component Id="cmp640F6A8E45077F8E64876EC85502E7E9" Directory="dirC261464737DEEF164B325D7B73CE80DA" Guid="*">
+                <File Id="fil00A168A19DD5D9F5BF023C2A32CB7D4A" KeyPath="yes" Source="SourceDir\.git\objects\b9\3660f06a49a9b98f41c4bdae861b4836a9448b" />
+            </Component>
+            <Component Id="cmpDE395B711B02DD873E1E45310B28B1E7" Directory="dir7635FA5EFEA1390148DAAD61A0D76791" Guid="*">
+                <File Id="fil2E5157CA9A29FEBD435F474D1A5AA881" KeyPath="yes" Source="SourceDir\.git\objects\c5\736cb2d09941f8bc62432dee358468e38a7c77" />
+            </Component>
+            <Component Id="cmp8D97A4892AE199C9F33966A856549FAC" Directory="dir64C607CC97C98B3ECAFC3CA236B8A165" Guid="*">
+                <File Id="filB0DCAEE200086F5C6EF455A4D01FC01F" KeyPath="yes" Source="SourceDir\.git\objects\c7\c05716b3504b3963f42de4ad04036b29576ca2" />
+            </Component>
+            <Component Id="cmpD22A40C1F6A8E75FD2758B430418F9FA" Directory="dir266D88DF273D51189CB17A5D48F30B5C" Guid="*">
+                <File Id="filD237C89C1FF019EAF0F5F68185F89BDB" KeyPath="yes" Source="SourceDir\.git\objects\de\52d922e13a267e15278b89c76e631d51c3a836" />
+            </Component>
+            <Component Id="cmpDDA79567B39D1A6E0F964F7F04A14B38" Directory="dir266D88DF273D51189CB17A5D48F30B5C" Guid="*">
+                <File Id="filAFAEA097FE9EA5A482E0C137CCABC559" KeyPath="yes" Source="SourceDir\.git\objects\de\c62c007505553e7df13d1cc53898857f318eda" />
+            </Component>
+            <Component Id="cmp7133246BBE92A9C2856A179A980B84E2" Directory="dirD52809F92E8BECE6FAE6DB2225630DC0" Guid="*">
+                <File Id="fil1CE1E409F15AA72C075C476D6D32A0E9" KeyPath="yes" Source="SourceDir\.git\objects\e3\c693a35fd4be7e79ba909a917d5a574195e421" />
+            </Component>
+            <Component Id="cmp2A47DCD1AA10F1BDD84EC3770DCF3B8A" Directory="dir39EAFCD22064BC60E494D981E63EFC9E" Guid="*">
+                <File Id="fil0A08537856C42B8D8B6643982B3BF070" KeyPath="yes" Source="SourceDir\.git\objects\e7\e7d4c7aa60d52c716cb8e88bb726b0a65bfe54" />
+            </Component>
+            <Component Id="cmpE8C8BF170F79D728302B3894A1922372" Directory="dirA6E87BDDF53DF20354EC9F2EE34D2957" Guid="*">
+                <File Id="fil25B3AFAA80EF7F1DFBFF1B6A6F56A8F1" KeyPath="yes" Source="SourceDir\.git\objects\f7\36ae77ae5977e0a807fa19dce2ac44cdfb85f5" />
+            </Component>
+            <Component Id="cmp2CAD7ABE73D122D3DB31E5020D045219" Directory="dirE34699C5805CC074BC143E6875C85BB1" Guid="*">
+                <File Id="fil680C3BD4DFF6A3085D1C8F2F050F5C25" KeyPath="yes" Source="SourceDir\.git\objects\fa\9b76eafdeed457bcb1d878a6a048ae9bd0d334" />
+            </Component>
+            <Component Id="cmp14900E5955FFB4841D55B9B25DBA14D9" Directory="dir90E53B574DE679A5D315215B15B978D4" Guid="*">
+                <File Id="fil1BE7C53A60DCF3E6EB4B54FDD346DDA5" KeyPath="yes" Source="SourceDir\.git\objects\fb\a6b4e3271029d7d1f0ce40314e3dcfad480edf" />
+            </Component>
+            <Component Id="cmp063BD3281A7B1D9A3D9ED4801AD47BB6" Directory="dir6C6B3CB223F2C901AD9220A5AF112052" Guid="*">
+                <File Id="fil2635DF425503F109AD8D44E1DB044ACA" KeyPath="yes" Source="SourceDir\.git\objects\fc\8a4f1824c441f86b2f20a2f15aa037890d644c" />
+            </Component>
+            <Component Id="cmp8C653F39DFA439B487873C284A2854AB" Directory="dirAC3F5CAC8163224D34752392AE09E2DC" Guid="*">
+                <File Id="fil1A9F3C90E01D52682FD90DF1E28A0000" KeyPath="yes" Source="SourceDir\.git\objects\ff\48f0683460644e109d69bd0b0056a61cfaa4be" />
+            </Component>
+            <Component Id="cmpDB7D5C7A12FB104B9A3342CFB5ABB5CC" Directory="dirF60435F475DAB25261C6FA3097795793" Guid="*">
+                <File Id="fil8229BC5EF67BB043F91A1295DE3E8ACD" KeyPath="yes" Source="SourceDir\.git\refs\heads\master" />
+            </Component>
+            <Component Id="cmp0E4148553179CB0F89CAFEE1A73591B2" Directory="dir7117AE8A0E2621671AA299CE7253062F" Guid="*">
+                <File Id="fil784F02FC25DE1166C2A96ACADE38CB08" KeyPath="yes" Source="SourceDir\deploy\main.ps1" />
+            </Component>
+            <Component Id="cmp8417E27079E02AAC334D0FBA43EEE95E" Directory="dir7117AE8A0E2621671AA299CE7253062F" Guid="*">
+                <File Id="fil5D98448DD36FA2C19D81C933551EB6FF" KeyPath="yes" Source="SourceDir\deploy\quser.psm1" />
+            </Component>
+            <Component Id="cmp85710A23D1EC095FC84A28C4294C5C4A" Directory="dir7117AE8A0E2621671AA299CE7253062F" Guid="*">
+                <File Id="fil83550FB8E59A69794FCA5C1D5893A210" KeyPath="yes" Source="SourceDir\deploy\run_once.ps1" />
+            </Component>
+            <Component Id="cmpD82D066BB0963A9F3D7AA1E8F7DFC463" Directory="dir7117AE8A0E2621671AA299CE7253062F" Guid="*">
+                <File Id="fil821BD2F4E29D3CBDF660F02711B441BD" KeyPath="yes" Source="SourceDir\deploy\run_once.vbs" />
+            </Component>
+            <Component Id="cmp5620BE1ED5E6F7A19A8A6A6A0F63B601" Directory="dir7117AE8A0E2621671AA299CE7253062F" Guid="*">
+                <File Id="filA8EC5EAB91D439E11168D22E7F098A8E" KeyPath="yes" Source="SourceDir\deploy\ShutdownManager.Tests.ps1" />
+            </Component>
+            <Component Id="cmp595DA65969E2590E4960557A7FCD9BFE" Directory="dirC60A23FC048C0C2D3CCC1FE82EBEB684" Guid="*">
+                <File Id="filC1174D528CD829B44450011B3A494036" KeyPath="yes" Source="SourceDir\Sample\mytest.ps1" />
+            </Component>
+            <Component Id="cmpC05612EE48EACDC2C355146668C5B364" Directory="dirC60A23FC048C0C2D3CCC1FE82EBEB684" Guid="*">
+                <File Id="fil4E58F4FB141EAA83B8E3C4E404B5B0D0" KeyPath="yes" Source="SourceDir\Sample\SampleClass.Tests.ps1" />
+            </Component>
+            <Component Id="cmp4A8AC3C8F3433D9812D7C855FF95F5E3" Directory="dirC60A23FC048C0C2D3CCC1FE82EBEB684" Guid="*">
+                <File Id="fil63164F9550ADEE11F6AB21033CD406D1" KeyPath="yes" Source="SourceDir\Sample\SampleModule1.psm1" />
+            </Component>
+            <Component Id="cmpC4BD2F9D9E4280C3DDFAC1DA0B973DF0" Directory="dirC60A23FC048C0C2D3CCC1FE82EBEB684" Guid="*">
+                <File Id="filF2768AA4C5280B5892407AA09BE16C8D" KeyPath="yes" Source="SourceDir\Sample\SampleModule2.psm1" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir1081AE01A268FE0F40B633524A64B275" Name="21" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir1188BA494D717B6FD88A4905C918F7A3" Name="7d" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirA07F52326E6BBFF59AADAC4A9EAC0B09">
+            <Directory Id="dir147823CCE48B7BD26A63D6C14C58F475" Name="objects" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir16A5EDDBF2F66AA38765B6790C7BB374" Name="41" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir7BC7DE9DA49A64C9B246BF2AF8FBF8DF">
+            <Directory Id="dir183C78DF52898588641FBD780C2562A5" Name="heads" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir1BCDA6B77969AC0A41404475C8B8C119" Name="ae" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir1F97BD14DD3FE1DAE09C8AB811BCB0FC" Name="b8" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir220C9F85C78F57659491DCA88A113C01" Name="01" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir266D88DF273D51189CB17A5D48F30B5C" Name="de" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirA07F52326E6BBFF59AADAC4A9EAC0B09">
+            <Directory Id="dir35517DD5B1CD00EB0FBB24BCC5B9167F" Name="refs" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir39EAFCD22064BC60E494D981E63EFC9E" Name="e7" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="TARGETDIR">
+            <Directory Id="dir3B221EF764FA86C61146C4373D94381D" Name="quserwrapper" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir4CB20EB407D4234447732F791C8A19BB" Name="b5" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir550001A824A1B1800AE79AC9B01D3C7C" Name="61" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir551B96E5F59760DA73CB5F6CC842535C" Name="0b" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir64C607CC97C98B3ECAFC3CA236B8A165" Name="c7" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir6C6B3CB223F2C901AD9220A5AF112052" Name="fc" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir3B221EF764FA86C61146C4373D94381D">
+            <Directory Id="dir7117AE8A0E2621671AA299CE7253062F" Name="deploy" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir7635FA5EFEA1390148DAAD61A0D76791" Name="c5" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirA07F52326E6BBFF59AADAC4A9EAC0B09">
+            <Directory Id="dir7A33702DED6F075433EE915ED78FABE1" Name="info" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir7BBFA08871382B0076D36F4E63755928" Name="1b" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirA2A12EA202601B1BCE2B070867E4C0A8">
+            <Directory Id="dir7BC7DE9DA49A64C9B246BF2AF8FBF8DF" Name="refs" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir9005483E0FFA6D1D15EF088CED802E16" Name="9c" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dir90E53B574DE679A5D315215B15B978D4" Name="fb" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir3B221EF764FA86C61146C4373D94381D">
+            <Directory Id="dirA07F52326E6BBFF59AADAC4A9EAC0B09" Name=".git" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirA07F52326E6BBFF59AADAC4A9EAC0B09">
+            <Directory Id="dirA2A12EA202601B1BCE2B070867E4C0A8" Name="logs" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirA61D185F1F8EF3F22939E712E056A369" Name="15" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirA6E87BDDF53DF20354EC9F2EE34D2957" Name="f7" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirAC3F5CAC8163224D34752392AE09E2DC" Name="ff" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirA07F52326E6BBFF59AADAC4A9EAC0B09">
+            <Directory Id="dirB97B2C4EE12C8A963977385F908BD35A" Name="hooks" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirBAEB1596F6931F7F7DA5E1CF9549C746" Name="52" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirBD187F5E92F35F5E2640AA6B65462E78" Name="5b" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirC11AEED248F1BDBF01A90AA189035690" Name="11" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirC261464737DEEF164B325D7B73CE80DA" Name="b9" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir3B221EF764FA86C61146C4373D94381D">
+            <Directory Id="dirC60A23FC048C0C2D3CCC1FE82EBEB684" Name="Sample" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirC9887F6AA27EEC5CF2980105687FEFD0" Name="87" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirCA11BADD8660B2EA6A9298AEBB8373F6" Name="9a" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirD52809F92E8BECE6FAE6DB2225630DC0" Name="e3" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirDA26FE27B63636A8EE574E2E8179BB1F" Name="8c" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirE34699C5805CC074BC143E6875C85BB1" Name="fa" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirE3F98F74E0A7093C738183F9B000B18D" Name="27" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirE45D76CDEA2588A5D5EB0078E9CC5B08" Name="3f" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirEDC0D85EF2195FCF5396B13D95960601" Name="25" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir35517DD5B1CD00EB0FBB24BCC5B9167F">
+            <Directory Id="dirF60435F475DAB25261C6FA3097795793" Name="heads" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dir147823CCE48B7BD26A63D6C14C58F475">
+            <Directory Id="dirFB03C1957AB5AEA007E721383276012A" Name="26" />
+        </DirectoryRef>
+    </Fragment>
+</Wix>
