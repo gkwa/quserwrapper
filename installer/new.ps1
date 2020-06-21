@@ -18,8 +18,8 @@ $guid2=(new-guid).guid
  -replace 'Id="PUT-GUID-HERE"', "Id=`"$guid2`"" | Set-Content -Path product.wxs
 
 heat.exe dir Work -nologo -cg MyComponentGroup -dr APPLICATIONROOTDIRECTORY -g1 -gg -srd -var var.SourceFilesDir -out Components.wxs
-# heat.exe dir Work -cg MyComponentGroup -g1 -gg -sf -srd -scom -sreg -out fragment.wxs
 
 candle.exe -nologo -dSourceFilesDir=Work Components.wxs
 candle.exe -nologo product.wxs
+
 light.exe -nologo -ext WixUIExtension Components.wixobj product.wixobj -out Output/product.msi

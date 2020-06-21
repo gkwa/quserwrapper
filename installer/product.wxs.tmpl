@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Product Id="*" UpgradeCode="PUT-GUID-HERE" Version="1.0.0.0" Language="1033" Name="PUT-PRODUCT-NAME-HERE" Manufacturer="PUT-COMPANY-NAME-HERE">
+
     <Package InstallerVersion="300" Compressed="yes" />
+
     <Media Id="1" Cabinet="myapplication.cab" EmbedCab="yes" />
+
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
         <Directory Id="MyCompany" Name="PUT-COMPANY-NAME-HERE">
