@@ -6,7 +6,9 @@ Copy-Item ../quser.psm1 Work -Force
 $guid1=(new-guid).guid
 $guid2=(new-guid).guid
 
-heat.exe dir Work -nologo -ag  -sreg -template product -out test.wxs
+heat.exe dir Work -nologo -cg MyComponentGroup -dr INSTALLFOLDER -gg -srd  -var var.SourceFilesDir -out Components.wxs
+# heat.exe dir Work -nologo -template product -out test.wxs
+# heat.exe dir Work -nologo -ag -sreg -template product -out test.wxs
 # heat.exe dir Work -nologo -out test.wxs
 (Get-Content test.wxs) `
  -replace 'Title="PUT-FEATURE-TITLE-HERE"', 'Title="Quserwrapper"' `
