@@ -1,6 +1,6 @@
 build: product.wxs
-	pwsh -file do_once_only.ps1
-	pwsh -file build.ps1
+	pwsh -File do_once_only.ps1
+	pwsh -File build.ps1
 
 product.wxs:
 	cp product.wxs.tmpl product.wxs
@@ -10,9 +10,9 @@ tidy:
 	unix2dos product.wxs.tmpl
 
 test:
-	pwsh -command 'Invoke-Pester'
+	pwsh -Command 'Invoke-Pester'
 
 clean:
-	rm -rf Work
+	rm -rf  Work
 	rm -rf Output
 	rm -f *.wixobj
