@@ -1,5 +1,7 @@
 * TODO figure out how wix add scheduled tasks
 
+Need to add this as custom installer action...need to find out how to do that too.
+
 #+BEGIN_EXAMPLE
 $A = New-ScheduledTaskAction -Execute 'C:\Windows\system32\wscript.exe' `
  -WorkingDirectory "C:\Program Files (x86)\MyCompanyName\MyProductName" `
