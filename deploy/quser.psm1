@@ -19,11 +19,11 @@ class ShutdownManager {
         $this.process.StartInfo = $this.pinfo
     }
     run() {
-        $this.pinfo.Arguments = "-t 600 -s" 
+        $this.pinfo.Arguments = "-t 1800 -s" 
         $this.process.Start() | Out-Null
-        # $this.process.WaitForExit()
         $this.stdout = $this.process.StandardOutput.ReadToEnd()
         $this.stderr = $this.process.StandardError.ReadToEnd()
+        $this.evt.WriteEntry("Shutdown initiated", [System.Diagnostics.EventLogEntryType]::Information, 500)
         $this.evt.WriteEntry($this.stdout, [System.Diagnostics.EventLogEntryType]::Information, 100)
         $this.evt.WriteEntry($this.stderr, [System.Diagnostics.EventLogEntryType]::Information, 100)
     }
@@ -33,6 +33,7 @@ class ShutdownManager {
         # $this.process.WaitForExit()
         $this.stdout = $this.process.StandardOutput.ReadToEnd()
         $this.stderr = $this.process.StandardError.ReadToEnd()
+        $this.evt.WriteEntry("Shutdown canceled", [System.Diagnostics.EventLogEntryType]::Information, 600)
         $this.evt.WriteEntry($this.stdout, [System.Diagnostics.EventLogEntryType]::Information, 100)
         $this.evt.WriteEntry($this.stderr, [System.Diagnostics.EventLogEntryType]::Information, 100)
     }
