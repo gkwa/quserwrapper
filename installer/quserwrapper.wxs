@@ -40,6 +40,5 @@
         <ComponentRef Id="run_once.vbs" />
     </Feature>
 
-
     </Product> 
 </Wix>
