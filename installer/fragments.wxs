@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLLOCATION">
+            <Component Id="cmp31558F8E5A009554E8D19D12A5756238" Guid="{B3372CEE-4AD6-4837-BD1C-5DCDAC107634}">
+                <File Id="fil20EB58D0C5D2BE3EBF441A5BD6884424" KeyPath="yes" Source="$(var.SourceFilesDir)\main.ps1" />
+            </Component>
+            <Component Id="cmp430B83E7E44B7DD9E459D30D757B5818" Guid="{C4BAF89F-82C6-446A-B87E-22C072F54268}">
+                <File Id="fil1A6B6E8C303EB972296F1D649EB9417F" KeyPath="yes" Source="$(var.SourceFilesDir)\quser.psm1" />
+            </Component>
+            <Component Id="cmp715ECDD9E1EFE636C5B0CB20F7C0FB0A" Guid="{EBE0B1A7-8D19-441B-ACFE-A2B2B1EA43C1}">
+                <File Id="fil979BA33D911D757B2BFC84605A4BCE08" KeyPath="yes" Source="$(var.SourceFilesDir)\run_once.ps1" />
+            </Component>
+            <Component Id="cmp34D7D1F3C9C8A349E1F0F899F054F624" Guid="{E7F03E6F-0006-4ED6-86D2-389AE0B00FE9}">
+                <File Id="fil5F4378F1498370914772AC3ECD47EDE1" KeyPath="yes" Source="$(var.SourceFilesDir)\run_once.vbs" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="MyComponentGroup">
+            <ComponentRef Id="cmp31558F8E5A009554E8D19D12A5756238" />
+            <ComponentRef Id="cmp430B83E7E44B7DD9E459D30D757B5818" />
+            <ComponentRef Id="cmp715ECDD9E1EFE636C5B0CB20F7C0FB0A" />
+            <ComponentRef Id="cmp34D7D1F3C9C8A349E1F0F899F054F624" />
+        </ComponentGroup>
+    </Fragment>
+</Wix>
