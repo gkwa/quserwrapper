@@ -12,8 +12,8 @@
            Name="quserwrapper" Version="1.0" Manufacturer="Streambox"
            Language="1033" Codepage="1252">
     <Package Id="*" Manufacturer="Streambox" InstallScope="perMachine"
-             Description="windows_exporter 1.0 installer" Compressed="yes" />
-    <Media Id="1" Cabinet="windows_exporter.cab" EmbedCab="yes"/>
+             Description="quserwraper $(var.version) installer" Compressed="yes" />
+    <Media Id="1" Cabinet="quserwrapper.cab" EmbedCab="yes"/>
     <MajorUpgrade Schedule="afterInstallExecute" DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
 
     <Directory Id="TARGETDIR" Name="SourceDir">
@@ -25,10 +25,21 @@
 
     <ComponentGroup Id="Files">
       <Component Directory="APPLICATIONROOTDIRECTORY">
-        <File Id="main.ps1" Name="main.ps1" Source="Work\main.ps1" />
-        <File Id="quser.psm1" Name="quser.psm1" Source="Work\quser.psm1"  />
-        <File Id="run_once.ps1" Name="run_once.ps1" Source="Work\run_once.ps1" />
-        <File Id="run_once.vbs" Name="run_once.vbs" Source="Work\run_once.vbs"  />
+
+            <Component Id="cmp25070941A87FD1A9BADA0DF764F21799" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
+                <File Id="filC121397BB69C8CB91178500ED06734F4" KeyPath="yes" Source="SourceDir\main.ps1" />
+            </Component>
+            <Component Id="cmp8D00B9B3508B1477A7326EB9845548CD" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
+                <File Id="fil9B4794A94687B16F6D02B2075FB98834" KeyPath="yes" Source="SourceDir\quser.psm1" />
+            </Component>
+            <Component Id="cmp8079D876C6A8D76FADB80E80FC9909A1" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
+                <File Id="fil6E4A90F142967A3190F7F46B525CBCFC" KeyPath="yes" Source="SourceDir\run_once.ps1" />
+            </Component>
+            <Component Id="cmp58D54AE1C048F2D8F15EFE51BA965A48" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
+                <File Id="filFFDFCA4A3101FFAD35C9D78426A18ADB" KeyPath="yes" Source="SourceDir\run_once.vbs" />
+            </Component>
+
+
       </Component>
     </ComponentGroup>
 
