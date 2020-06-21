@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Id="*" UpgradeCode="a9db680a-17a9-4f06-9b94-976362bbc46e" Version="1.0.0.0" Language="1033" Name="Quserwrapper" Manufacturer="Streambox">
+  <Product Id="*" UpgradeCode="PUT-GUID-HERE" Version="1.0.0.0" Language="1033" Name="PUT-PRODUCT-NAME-HERE" Manufacturer="PUT-COMPANY-NAME-HERE">
     <Package InstallerVersion="300" Compressed="yes" />
     <Media Id="1" Cabinet="myapplication.cab" EmbedCab="yes" />
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="Streambox" Name="Streambox">
-          <Directory Id="APPLICATIONROOTDIRECTORY" Name="Quserwrapper" />
+        <Directory Id="MyCompany" Name="PUT-COMPANY-NAME-HERE">
+          <Directory Id="APPLICATIONROOTDIRECTORY" Name="PUT-PRODUCT-NAME-HERE" />
         </Directory>
       </Directory>
     </Directory>

@@ -5,7 +5,7 @@ tidy:
 	tidy -xml --doctype strict -w 1000 -q -i -c -modify quserwrapper.wxs
 	unix2dos quserwrapper.wxs
 
-do_once_only:
+once:
 	pwsh -file do_once_only.ps1
 
 clean:
