@@ -2,7 +2,6 @@ class ShutdownManager {
     [int]$idle = 0
     [string[]]$stdout
     [string[]]$stderr
-    [int]$minutes = 30
     [string]$message = "shutting down in 30 minutes triggered off taskschd"
     [System.Diagnostics.Eventlog]$evt 
     [System.Diagnostics.ProcessStartInfo]$pinfo
@@ -17,15 +16,19 @@ class ShutdownManager {
         $this.pinfo.RedirectStandardOutput = $true
         $this.pinfo.UseShellExecute = $false
         $this.process = New-Object System.Diagnostics.Process
-        $this.pinfo.Arguments = "-t $($this.minutes) -s -c '$($this.message)'"
-        $this.pinfo.Arguments = "-t $($this.minutes) -s"
-        $this.pinfo.Arguments = "-t 30 -s -c mytest"
-        $this.pinfo.Arguments = "-t 30 -s -c '$($this.message)'"
-        # $this.pinfo.Arguments = "-t 30 -s -c $this.message"
-        # $this.pinfo.Arguments = "-t 30 -s -c test"
         $this.process.StartInfo = $this.pinfo
     }
     run() {
+        $this.pinfo.Arguments = "-t 600 -s" 
+        $this.process.Start() | Out-Null
+        # $this.process.WaitForExit()
+        $this.stdout = $this.process.StandardOutput.ReadToEnd()
+        $this.stderr = $this.process.StandardError.ReadToEnd()
+        $this.evt.WriteEntry($this.stdout, [System.Diagnostics.EventLogEntryType]::Information, 100)
+        $this.evt.WriteEntry($this.stderr, [System.Diagnostics.EventLogEntryType]::Information, 100)
+    }
+    cancel() {
+        $this.pinfo.Arguments = "-a" 
         $this.process.Start() | Out-Null
         # $this.process.WaitForExit()
         $this.stdout = $this.process.StandardOutput.ReadToEnd()
@@ -87,19 +90,3 @@ Class Quserwrapper {
         }
     }
 }
-
-# $MaxIdle = New-TimeSpan -Hours 1
-# $MaxIdle = New-TimeSpan -Minutes 2
-# $quser = New-Object Quserwrapper
-# $shutdownManger = New-Object ShutdownManager
-
-# While ($true) {
-#     $quser.Check()
-#     $quser.GetIdle()
-#     Write-Output "You've been idle $($quser.idle) minutes"
-#     $IdleTime = New-TimeSpan -Minutes $quser.idle
-#     if ($IdleTime -gt $MaxIdle) {
-#         $shutdownManger.run()
-#     }
-#     Sleep -s 60
-# }
