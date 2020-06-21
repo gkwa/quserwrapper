@@ -1,48 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
-     xmlns:fw="http://schemas.microsoft.com/wix/FirewallExtension"
-     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
-  <?if $(sys.BUILDARCH)=x64 ?>
-    <?define PlatformProgramFiles = "ProgramFiles64Folder" ?>
-  <?else ?>
-    <?define PlatformProgramFiles = "ProgramFilesFolder" ?>
-  <?endif ?>
-
-  <Product Id="*" UpgradeCode="a235f6a0-5357-4563-b68f-81ae1829f94e"
-           Name="quserwrapper" Version="1.0" Manufacturer="Streambox"
-           Language="1033" Codepage="1252">
-    <Package Id="*" Manufacturer="Streambox" InstallScope="perMachine"
-             Description="quserwraper $(var.Version) installer" Compressed="yes" />
-    <Media Id="1" Cabinet="quserwrapper.cab" EmbedCab="yes"/>
-    <MajorUpgrade Schedule="afterInstallExecute" DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
-
-    <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
-        <Directory Id="APPLICATIONROOTDIRECTORY" Name="quserwrapper">
-        </Directory>
-      </Directory>
-    </Directory>
-
-    <ComponentGroup Id="Files">
-
-            <Component Id="cmp25070941A87FD1A9BADA0DF764F21799" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
-                <File Id="filC121397BB69C8CB91178500ED06734F4" KeyPath="yes" Source="Work\main.ps1" />
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="9f25e442-32f4-4a74-bcd1-e7d3797069a5" Language="1033" Manufacturer="Streambox" Name="Quserwrapper" UpgradeCode="e627ae71-0dba-45ea-9853-6b5ff1ca7d5f" Version="1.0.0.0">
+        <Package Compressed="yes" InstallerVersion="200" />
+        <Directory Id="TARGETDIR" Name="SourceDir" />
+        <Feature Id="ProductFeature" Level="1" Title="Quserwrapper" />
+        <Media Id="1" Cabinet="product.cab" EmbedCab="yes" />
+    </Product>
+    <Fragment>
+        <DirectoryRef Id="dirC59B4A5EBD02923C2D2174DAF2A24F9C">
+            <Component Id="cmp25070941A87FD1A9BADA0DF764F21799" Guid="*">
+                <File Id="filC121397BB69C8CB91178500ED06734F4" KeyPath="yes" Source="SourceDir\main.ps1" />
             </Component>
-            <Component Id="cmp8D00B9B3508B1477A7326EB9845548CD" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
-                <File Id="fil9B4794A94687B16F6D02B2075FB98834" KeyPath="yes" Source="Work\quser.psm1" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirC59B4A5EBD02923C2D2174DAF2A24F9C">
+            <Component Id="cmp58D54AE1C048F2D8F15EFE51BA965A48" Guid="*">
+                <File Id="filFFDFCA4A3101FFAD35C9D78426A18ADB" KeyPath="yes" Source="SourceDir\run_once.vbs" />
             </Component>
-            <Component Id="cmp8079D876C6A8D76FADB80E80FC9909A1" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
-                <File Id="fil6E4A90F142967A3190F7F46B525CBCFC" KeyPath="yes" Source="Work\run_once.ps1" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirC59B4A5EBD02923C2D2174DAF2A24F9C">
+            <Component Id="cmp8079D876C6A8D76FADB80E80FC9909A1" Guid="*">
+                <File Id="fil6E4A90F142967A3190F7F46B525CBCFC" KeyPath="yes" Source="SourceDir\run_once.ps1" />
             </Component>
-            <Component Id="cmp58D54AE1C048F2D8F15EFE51BA965A48" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
-                <File Id="filFFDFCA4A3101FFAD35C9D78426A18ADB" KeyPath="yes" Source="Work\run_once.vbs" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirC59B4A5EBD02923C2D2174DAF2A24F9C">
+            <Component Id="cmp8D00B9B3508B1477A7326EB9845548CD" Guid="*">
+                <File Id="fil9B4794A94687B16F6D02B2075FB98834" KeyPath="yes" Source="SourceDir\quser.psm1" />
             </Component>
-
-
-    </ComponentGroup>
-
-    <Feature Id="DefaultFeature" Level="1">
-      <ComponentGroupRef Id="Files" />
-    </Feature>
-  </Product>
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="TARGETDIR">
+            <Directory Id="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Name="Work" />
+        </DirectoryRef>
+    </Fragment>
 </Wix>
