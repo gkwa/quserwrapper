@@ -10,25 +10,10 @@
         </Directory>
       </Directory>
     </Directory>
-    <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
-      <Component Id="main.ps1" Guid="*">
-        <File Id="main.ps1" Source="Work\main.ps1" KeyPath="yes" Checksum="yes" />
-      </Component>
-      <Component Id="quser.psm1" Guid="*">
-        <File Id="quser.psm1" Source="Work\quser.psm1" KeyPath="yes" Checksum="yes" />
-      </Component>
-      <Component Id="run_once.ps1" Guid="*">
-        <File Id="runonce.ps1" Source="Work\run_once.ps1" KeyPath="yes" Checksum="yes" />
-      </Component>
-      <Component Id="run_once.vbs" Guid="*">
-        <File Id="run_once.vbs" Source="Work\run_once.vbs" KeyPath="yes" Checksum="yes" />
-      </Component>
-    </DirectoryRef>
+
     <Feature Id="MainApplication" Title="Main Application" Level="1">
-      <ComponentRef Id="main.ps1" />
-      <ComponentRef Id="quser.psm1" />
-      <ComponentRef Id="run_once.ps1" />
-      <ComponentRef Id="run_once.vbs" />
+      <ComponentGroupRef Id="MyComponentGroup" />
     </Feature>
+
   </Product>
 </Wix>
