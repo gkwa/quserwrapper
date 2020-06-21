@@ -1,6 +1,7 @@
-* 
+* workflow
 
 #+BEGIN_EXAMPLE
-make 
+make
+git add product.wxs
 make test
 #+END_EXAMPLE
