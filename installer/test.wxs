@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="{87191b46-a030-4617-b260-349bb03218fb}" Language="1033" Manufacturer="Streambox" Name="Quserwrapper" UpgradeCode="{c4473740-e224-4e6f-b5c9-f3c49953078e}" Version="1.0.0.0">
+    <Product Id="{8f1af486-7ac6-4c00-a50c-252629066f98}" Language="1033" Manufacturer="Streambox" Name="Quserwrapper" UpgradeCode="{182b0220-672d-4a70-b773-06aadfd25b11}" Version="1.0.0.0">
         <Package Compressed="yes" InstallerVersion="200" />
         <Directory Id="TARGETDIR" Name="SourceDir" />
         <Feature Id="ProductFeature" Level="1" Title="Quserwrapper">
@@ -15,6 +15,12 @@
             </Component>
             <Component Id="cmp8D00B9B3508B1477A7326EB9845548CD" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
                 <File Id="fil9B4794A94687B16F6D02B2075FB98834" KeyPath="yes" Source="SourceDir\quser.psm1" />
+            </Component>
+            <Component Id="cmp8079D876C6A8D76FADB80E80FC9909A1" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
+                <File Id="fil6E4A90F142967A3190F7F46B525CBCFC" KeyPath="yes" Source="SourceDir\run_once.ps1" />
+            </Component>
+            <Component Id="cmp58D54AE1C048F2D8F15EFE51BA965A48" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
+                <File Id="filFFDFCA4A3101FFAD35C9D78426A18ADB" KeyPath="yes" Source="SourceDir\run_once.vbs" />
             </Component>
             <Component Id="cmp4F022DBCA83F2CC72B83C3C9D9E13255" Directory="dirC59B4A5EBD02923C2D2174DAF2A24F9C" Guid="*">
                 <File Id="fil5F0C7F89BC6215E7166EA1A2F4AEE210" KeyPath="yes" Source="SourceDir\test.wixobj" />
