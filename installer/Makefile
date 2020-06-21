@@ -1,12 +1,16 @@
-build:
+build: product.wxs
+	pwsh -file do_once_only.ps1
 	pwsh -file build.ps1
 
-tidy:
-	tidy -xml --doctype strict -w 1000 -q -i -c -modify quserwrapper.wxs
-	unix2dos quserwrapper.wxs
+product.wxs:
+	cp product.wxs.tmpl product.wxs
 
-once:
-	pwsh -file do_once_only.ps1
+tidy:
+	tidy -xml --doctype strict -w 1000 -q -i -c -modify product.wxs.tmpl
+	unix2dos product.wxs.tmpl
+
+test:
+	pwsh -command 'Invoke-Pester'
 
 clean:
 	rm -rf Work
