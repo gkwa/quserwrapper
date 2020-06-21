@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="projectlocation" />
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="projectdir">
+            <Component Id="cmpF8F4AA09A876651F2A50FB7839001DC1" Directory="projectlocation" Guid="{B4F0CD65-0670-40C4-991A-B9EA9432826E}">
+                <File Id="filECD5F162B5241AD4A2CB263945D577C9" KeyPath="yes" Source="$(var.projectsourcedir)\main.ps1" />
+            </Component>
+            <Component Id="cmpDF8D322197287DDA46B471B5541AE5AD" Directory="projectlocation" Guid="{0CBE4F6F-7212-476B-B7F4-A3BD3C8F0EF6}">
+                <File Id="filA8171F54AA747E0E8CB60160954E44BC" KeyPath="yes" Source="$(var.projectsourcedir)\quser.psm1" />
+            </Component>
+            <Component Id="cmp31926AB5F1347982C3BC9974E3D0975B" Directory="projectlocation" Guid="{006E5C4D-1769-4EA6-BF98-3C662111D852}">
+                <File Id="fil24EF6A5E612DF9FB6ADA2D980483F6ED" KeyPath="yes" Source="$(var.projectsourcedir)\run_once.ps1" />
+            </Component>
+            <Component Id="cmp0A6840F3489B2A62AE3F2595573E665D" Directory="projectlocation" Guid="{704D24FB-F62A-40E3-A993-583D7D7EE33F}">
+                <File Id="fil5D9A4345712F976C12F9AB63F318437C" KeyPath="yes" Source="$(var.projectsourcedir)\run_once.vbs" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

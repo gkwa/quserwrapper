@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*"
+             UpgradeCode="a9db680a-17a9-4f06-9b94-976362bbc46e"
+             Version="1.0.0.0"
+             Language="1033"
+             Name="Quserwrapper"
+             Manufacturer="Streambox">
+    <Package InstallerVersion="300" Compressed="yes"/>
+    <Media Id="1" Cabinet="myapplication.cab" EmbedCab="yes" />
+
+    <!-- The following three sections are from the How To: Add a File to Your Installer topic-->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+        <Directory Id="ProgramFilesFolder">
+            <Directory Id="Streambox" Name="Streambox">
+                <Directory Id="APPLICATIONROOTDIRECTORY" Name="Quserwrapper"/>
+            </Directory>
+        </Directory>
+    </Directory>
+
+    <DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+        <Component Id="main.ps1" Guid="*">
+            <File Id="main.ps1" Source="Work\main.ps1" KeyPath="yes" Checksum="yes"/>
+        </Component>
+        <Component Id="quser.psm1" Guid="*">
+            <File Id="quser.psm1" Source="Work\quser.psm1" KeyPath="yes" Checksum="yes"/>
+        </Component>
+        <Component Id="run_once.ps1" Guid="*">
+            <File Id="runonce.ps1" Source="Work\run_once.ps1" KeyPath="yes" Checksum="yes"/>
+        </Component>
+        <Component Id="run_once.vbs" Guid="*">
+            <File Id="run_once.vbs" Source="Work\run_once.vbs" KeyPath="yes" Checksum="yes"/>
+        </Component>
+    </DirectoryRef>
+
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+        <ComponentRef Id="main.ps1" />
+        <ComponentRef Id="quser.psm1" />
+        <ComponentRef Id="run_once.ps1" />
+        <ComponentRef Id="run_once.vbs" />
+    </Feature>
+
+
+    </Product> 
+</Wix>
