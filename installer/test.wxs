@@ -12,7 +12,7 @@
            Name="quserwrapper" Version="1.0" Manufacturer="Streambox"
            Language="1033" Codepage="1252">
     <Package Id="*" Manufacturer="Streambox" InstallScope="perMachine"
-             Description="quserwraper $(var.version) installer" Compressed="yes" />
+             Description="quserwraper $(var.Version) installer" Compressed="yes" />
     <Media Id="1" Cabinet="quserwrapper.cab" EmbedCab="yes"/>
     <MajorUpgrade Schedule="afterInstallExecute" DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
 
