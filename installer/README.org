@@ -14,7 +14,6 @@ $D = New-ScheduledTask -Action $A -Principal $P -Trigger $T -Settings $S
 Register-ScheduledTask T1 -InputObject $D -Force
 #+END_EXAMPLE
 
-
 * workflow
 
 #+BEGIN_EXAMPLE
