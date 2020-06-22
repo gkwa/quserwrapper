@@ -10,7 +10,6 @@ test:
 
 clean:
 	rm -f components.wxs
-	rm -f product.wxs
 	rm -rf Work
 	rm -rf Output
 	rm -f *.wixobj
