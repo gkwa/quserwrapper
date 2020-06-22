@@ -1,9 +1,5 @@
-build: product.wxs
-	pwsh -File do_once_only.ps1
+build:
 	pwsh -File build.ps1
-
-product.wxs:
-	cp product.wxs.tmpl product.wxs
 
 tidy:
 	tidy -xml --doctype strict -w 1000 -q -i -c -modify product.wxs.tmpl
