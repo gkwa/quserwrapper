@@ -1,6 +1,6 @@
 mkdir -Force Work, Output | Out-Null
 
-cp product.wxs.tmpl product.wxs
+Copy-Item -Force product.wxs.tmpl product.wxs
 
 Copy-Item ../main.ps1 Work -Force
 Copy-Item ../run_once.ps1 Work -Force
