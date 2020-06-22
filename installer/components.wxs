@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="APPLICATIONROOTDIRECTORY" />
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="MyComponentGroup">
+            <Component Id="cmpE8338926A5ECB6D2EBFCB8CF7A1B3D55" Directory="APPLICATIONROOTDIRECTORY" Guid="52C847C2-CE62-453F-B969-F74605C01352">
+                <File Id="filA48FEF089A999BF1A517242D014AE962" KeyPath="yes" Source="$(var.SourceFilesDir)\main.ps1" />
+            </Component>
+            <Component Id="cmp963CB76CF59E75FB53C885687E93ACC2" Directory="APPLICATIONROOTDIRECTORY" Guid="209F83EA-8047-4DE8-9900-D6FC8B870C10">
+                <File Id="filB38CCFD221473EF5FB9875D8EE7C34BC" KeyPath="yes" Source="$(var.SourceFilesDir)\quser.psm1" />
+            </Component>
+            <Component Id="cmpB99927AED46F2096B2B2784120E5A434" Directory="APPLICATIONROOTDIRECTORY" Guid="B99B1495-D980-4589-9C15-A3AA12B32AC3">
+                <File Id="fil608E14B5E01DD4DE22AAD36D6B107F55" KeyPath="yes" Source="$(var.SourceFilesDir)\run_once.ps1" />
+            </Component>
+            <Component Id="cmp55966D8A7985EF96B1AA99C4EE0AE316" Directory="APPLICATIONROOTDIRECTORY" Guid="C5C05E62-1919-4B59-ABD0-2CCAEEFE2B13">
+                <File Id="filBE21DD6AFCB4C7B97B55F6CBD7F9DF79" KeyPath="yes" Source="$(var.SourceFilesDir)\run_once.vbs" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>
