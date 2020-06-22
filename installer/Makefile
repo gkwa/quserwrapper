@@ -9,6 +9,8 @@ test:
 	pwsh -Command 'Invoke-Pester'
 
 clean:
-	rm -rf  Work
+	rm -f components.wxs
+	rm -f product.wxs
+	rm -rf Work
 	rm -rf Output
 	rm -f *.wixobj

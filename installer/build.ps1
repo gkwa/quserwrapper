@@ -17,10 +17,10 @@ $guid2=(new-guid).guid
  -replace 'UpgradeCode="PUT-GUID-HERE"', "UpgradeCode=`"$guid1`"" `
  -replace 'Id="PUT-GUID-HERE"', "Id=`"$guid2`"" | Set-Content -Path product.wxs
 
-heat.exe dir Work -var var.SourceFilesDir -out Components.wxs `
+heat.exe dir Work -var var.SourceFilesDir -out components.wxs `
  -cg MyComponentGroup -dr APPLICATIONROOTDIRECTORY -g1 -gg -srd -nologo
 
-candle.exe -nologo -dSourceFilesDir=Work Components.wxs
+candle.exe -nologo -dSourceFilesDir=Work components.wxs
 candle.exe -nologo product.wxs
 
-light.exe -nologo -ext WixUIExtension Components.wixobj product.wixobj -out Output/product.msi
+light.exe -nologo -ext WixUIExtension components.wixobj product.wixobj -out Output/product.msi
