@@ -19,7 +19,7 @@ Register-ScheduledTask T1 -InputObject $D -Force
 * workflow
 
 #+BEGIN_EXAMPLE
-make
-git add product.wxs
+make build
 make test
+git add product.wxs
 #+END_EXAMPLE
