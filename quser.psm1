@@ -66,15 +66,15 @@ Class Quserwrapper {
         $y = $quserObject."IDLE TIME"
 
         if ('.' -eq $y) {
-            $this.evt.WriteEntry("Active", [System.Diagnostics.EventLogEntryType]::Information, 100)
             $this.idle = 0
+            $this.evt.WriteEntry("Active", [System.Diagnostics.EventLogEntryType]::Information, 100)
             return
         }
 
         [Int32]$number = 0
         if ([Int32]::TryParse($y, [ref]$number)) {
             $this.idle = $number
-            $this.evt.WriteEntry("Idle $($number) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
+            $this.evt.WriteEntry("raw: $y, Idle $($number) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
             return
         }
 
@@ -85,7 +85,7 @@ Class Quserwrapper {
             $now = (GET-DATE)
             $ts = New-Timespan -Start $then -End $now
             $this.idle = $ts.TotalMinutes
-            $this.evt.WriteEntry("Idle $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
+            $this.evt.WriteEntry("raw: $y, get-date, Idle $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
             return
         }
         catch {
