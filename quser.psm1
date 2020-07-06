@@ -9,7 +9,7 @@ class ShutdownManager {
 
     ShutdownManager() {
         $this.evt = new-object System.Diagnostics.Eventlog("Application")
-        $this.evt.Source = "ShutdownManger"
+        $this.evt.Source = "ShutdownManager"
         $this.pinfo = New-Object System.Diagnostics.ProcessStartInfo
         $this.pinfo.FileName = "shutdown"
         $this.pinfo.RedirectStandardError = $true
