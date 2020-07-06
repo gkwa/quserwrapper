@@ -67,21 +67,21 @@ Class Quserwrapper {
 
         if ('.' -eq $y) {
             $this.idle = 0
-            $this.evt.WriteEntry("Active", [System.Diagnostics.EventLogEntryType]::Information, 100)
+            $this.evt.WriteEntry("$y interpreted as 0 minutes (currently active)", [System.Diagnostics.EventLogEntryType]::Information, 100)
             return
         }
 
         [Int32]$number = 0
         if ([Int32]::TryParse($y, [ref]$number)) {
             $this.idle = $number
-            $this.evt.WriteEntry("raw: $y, Idle $($number) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
+            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
             return
         }
 
         try {
             $ts = [TimeSpan]$y
             $this.idle = $ts.TotalMinutes
-            $this.evt.WriteEntry("raw: $y, [TimeSpan]'$y', Idle $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
+            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
             return
         }
         catch {
