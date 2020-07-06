@@ -33,9 +33,12 @@ class ShutdownManager {
         # $this.process.WaitForExit()
         $this.stdout = $this.process.StandardOutput.ReadToEnd()
         $this.stderr = $this.process.StandardError.ReadToEnd()
-        $this.evt.WriteEntry("Shutdown canceled", [System.Diagnostics.EventLogEntryType]::Information, 600)
-        $this.evt.WriteEntry($this.stdout, [System.Diagnostics.EventLogEntryType]::Information, 100)
-        $this.evt.WriteEntry($this.stderr, [System.Diagnostics.EventLogEntryType]::Information, 100)
+        If(-Not ($this.stderr -Match '(1116)')) {
+            # Unable to abort the system shutdown because no shutdown was in progress.(1116)
+            $this.evt.WriteEntry("Shutdown canceled", [System.Diagnostics.EventLogEntryType]::Information, 600)
+            $this.evt.WriteEntry($this.stdout, [System.Diagnostics.EventLogEntryType]::Information, 100)
+            $this.evt.WriteEntry($this.stderr, [System.Diagnostics.EventLogEntryType]::Information, 100)
+        }
     }
 }
 
