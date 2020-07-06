@@ -78,18 +78,14 @@ Class Quserwrapper {
             return
         }
 
-        $then = 0
-        $now = 0
         try {
-            $then = [datetime]$y
-            $now = (GET-DATE)
-            $ts = New-Timespan -Start $then -End $now
+            $ts = [TimeSpan]$y
             $this.idle = $ts.TotalMinutes
-            $this.evt.WriteEntry("raw: $y, get-date, Idle $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
+            $this.evt.WriteEntry("raw: $y, [TimeSpan]'$y', Idle $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
             return
         }
         catch {
-            $this.evt.WriteEntry("Error in timespan calulation between $then and $now", [System.Diagnostics.EventLogEntryType]::Information, 300)
+            $this.evt.WriteEntry("Can't cast $y into TimeSpan", [System.Diagnostics.EventLogEntryType]::Information, 300)
         }
 
         $this.evt.WriteEntry("Unexpected idle time $y", [System.Diagnostics.EventLogEntryType]::Information, 300)
