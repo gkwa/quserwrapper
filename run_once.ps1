@@ -1,8 +1,9 @@
 using module .\quser.psm1
 
 $MaxIdleTS = New-TimeSpan -Hours 1
+$DelayTS = New-TimeSpan -Minutes 15
 $Quser = New-Object Quserwrapper
-$ShutdownManger = New-Object ShutdownManager
+$ShutdownManger = New-Object ShutdownManager($DelayTS)
 
 $Quser.Check()
 $Quser.GetIdle()
