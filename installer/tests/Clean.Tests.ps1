@@ -5,6 +5,7 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path) -replace '\.Tests\.', '.'
 Describe "Install" {
     It "verify product was installed into correct directory" {
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName" | Should -Be $true
+        Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\main.ps1" | Should -Be $true
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\run_once.ps1" | Should -Be $true
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\quser.psm1" | Should -Be $true
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\run_once.vbs" | Should -Be $true
@@ -14,6 +15,7 @@ Describe "Install" {
 Describe "Uninstall" {
     It "verify files and directory no longer exist" {
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName" | Should -Be $false
+        Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\main.ps1" | Should -Be $false
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\run_once.ps1" | Should -Be $false
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\quser.psm1" | Should -Be $false
         Test-Path "C:\Program Files (x86)\MyCompanyName\MyProductName\run_once.vbs" | Should -Be $false

@@ -5,6 +5,9 @@
     </Fragment>
     <Fragment>
         <ComponentGroup Id="MyComponentGroup">
+            <Component Id="cmpE8338926A5ECB6D2EBFCB8CF7A1B3D55" Directory="APPLICATIONROOTDIRECTORY" Guid="E5B8CB97-2455-4D5D-BC10-1978462E1FBA">
+                <File Id="filA48FEF089A999BF1A517242D014AE962" KeyPath="yes" Source="$(var.SourceFilesDir)\main.ps1" />
+            </Component>
             <Component Id="cmp963CB76CF59E75FB53C885687E93ACC2" Directory="APPLICATIONROOTDIRECTORY" Guid="E4AFD442-4FC8-4017-9F9D-A6E46B0D89B2">
                 <File Id="filB38CCFD221473EF5FB9875D8EE7C34BC" KeyPath="yes" Source="$(var.SourceFilesDir)\quser.psm1" />
             </Component>
