@@ -1,16 +1,17 @@
 using module .\quser.psm1
 
-$MaxIdle = New-TimeSpan -Hours 1
-$quser = New-Object Quserwrapper
-$shutdownManger = New-Object ShutdownManager
+$MaxIdleTS = New-TimeSpan -Hours 1
+$DelayTS = New-TimeSpan -Minutes 15
+$Quser = New-Object Quserwrapper
+$ShutdownManger = New-Object ShutdownManager($DelayTS)
 
-$quser.Check()
-$quser.GetIdle()
-Write-Output "You've been idle $($quser.idle) minutes"
-$IdleTime = New-TimeSpan -Minutes $quser.idle
-if ($IdleTime -gt $MaxIdle) {
-    $shutdownManger.shutdown()
+$Quser.Check()
+$Quser.GetIdle()
+Write-Output "You've been idle $($Quser.idle) minutes"
+$IdleTime = New-TimeSpan -Minutes $Quser.idle
+if ($IdleTime -gt $MaxIdleTS) {
+    $ShutdownManger.shutdown()
 }
 else {
-    $shutdownManger.cancel()
+    $ShutdownManger.cancel()
 }
