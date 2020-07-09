@@ -12,10 +12,10 @@
                 <File Id="filB38CCFD221473EF5FB9875D8EE7C34BC" KeyPath="yes" Source="$(var.SourceFilesDir)\quser.psm1" />
             </Component>
             <Component Id="cmpB99927AED46F2096B2B2784120E5A434" Directory="APPLICATIONROOTDIRECTORY" Guid="DBE0BE3D-8263-4EFC-9D3A-470A61B210CB">
-                <File Id="fil608E14B5E01DD4DE22AAD36D6B107F55" KeyPath="yes" Source="$(var.SourceFilesDir)\run_once.ps1" />
+                <File Id="fil608E14B5E01DD4DE22AAD36D6B107F55" KeyPath="yes" Source="$(var.SourceFilesDir)\main.ps1" />
             </Component>
             <Component Id="cmp55966D8A7985EF96B1AA99C4EE0AE316" Directory="APPLICATIONROOTDIRECTORY" Guid="86C6D1B0-DDBF-44AA-A791-A5CE350C084C">
-                <File Id="filBE21DD6AFCB4C7B97B55F6CBD7F9DF79" KeyPath="yes" Source="$(var.SourceFilesDir)\run_once.vbs" />
+                <File Id="filBE21DD6AFCB4C7B97B55F6CBD7F9DF79" KeyPath="yes" Source="$(var.SourceFilesDir)\main.vbs" />
             </Component>
         </ComponentGroup>
     </Fragment>
