@@ -10,7 +10,7 @@ While ($true) {
     $quser.GetIdle()
     Write-Output "You've been idle $($quser.idle) minutes"
     $IdleTime = New-TimeSpan -Minutes $quser.idle
-    if ($IdleTime -gt $MaxIdle) {
+    if ($quser.error -or ($IdleTime -gt $MaxIdle)) {
         $shutdownManger.shutdown()
     }else{
         $shutdownManger.cancel()

@@ -45,6 +45,7 @@ class ShutdownManager {
 
 Class Quserwrapper {
     [int]$idle = 0
+    [boolean]$error = $false
     [string[]]$stdout
     [string[]]$stderr
     [System.Diagnostics.Eventlog]$evt 
@@ -89,6 +90,7 @@ Class Quserwrapper {
         }
         catch {
             $this.evt.WriteEntry("Can't cast $y into TimeSpan", [System.Diagnostics.EventLogEntryType]::Information, 300)
+            $this.error = $true
         }
 
         $this.evt.WriteEntry("Unexpected idle time $y", [System.Diagnostics.EventLogEntryType]::Information, 300)
