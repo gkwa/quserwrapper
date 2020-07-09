@@ -84,7 +84,7 @@ Class Quserwrapper {
         try {
             $ts = [TimeSpan]$y
             $this.idle = $ts.TotalMinutes
-            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
+            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes from $($this.stdout)", [System.Diagnostics.EventLogEntryType]::Information, 200)
             return
         }
         catch {
