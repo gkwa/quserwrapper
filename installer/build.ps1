@@ -17,7 +17,7 @@ $guid2=(new-guid).guid
  -replace 'Id="PUT-GUID-HERE"', "Id=`"$guid2`"" | Set-Content -Path product.wxs
 
 heat dir Work `
- -nologo
+ -nologo `
  -var var.SourceFilesDir `
  -out components.wxs `
  -cg MyComponentGroup `
