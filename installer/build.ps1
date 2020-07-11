@@ -3,7 +3,7 @@ mkdir -Force Work, Output | Out-Null
 Copy-Item -Force product.wxs.tmpl product.wxs
 
 Copy-Item ../main.ps1 Work -Force
-Copy-Item ../run_once.vbs Work -Force
+Copy-Item ../main.vbs Work -Force
 Copy-Item ../quser.psm1 Work -Force
 
 $guid1=(new-guid).guid
