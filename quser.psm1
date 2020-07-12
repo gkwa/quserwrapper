@@ -1,11 +1,9 @@
 class ShutdownManager {
-    param(
-        [TimeSpan]$DelayTS = New-TimeSpan -Minutes 15
-    )
     [int]$idle = 0
     [string[]]$stdout
     [string[]]$stderr
-    [string]$message = "shutting down in $($DelayTS.TotalMinutes) minutes triggered from taskschd"
+    [TimeSpan]$DelayTS
+    [string]$message
     [System.Diagnostics.Eventlog]$evt 
     [System.Diagnostics.ProcessStartInfo]$pinfo
     [System.Diagnostics.Process]$process
@@ -20,6 +18,8 @@ class ShutdownManager {
         $this.pinfo.UseShellExecute = $false
         $this.process = New-Object System.Diagnostics.Process
         $this.process.StartInfo = $this.pinfo
+        $this.DelayTS = New-TimeSpan -Minutes 15
+        $this.message = "shutting down in $($this.DelayTS.TotalMinutes) minutes triggered from taskschd"
     }
     shutdown() {
         $this.pinfo.Arguments = "-t $($this.DelayTS.TotalSeconds) -s" 
