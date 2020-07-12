@@ -7,6 +7,7 @@ Copy-Item ../main.vbs Work -Force
 Copy-Item ../quser.psm1 Work -Force
 
 $guid1=(new-guid).guid
+$guid1='B976874A-AD4B-43EE-896D-078699660446' #UpgradeCode
 $guid2=(new-guid).guid
 
 (Get-Content product.wxs) `
