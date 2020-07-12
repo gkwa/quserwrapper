@@ -103,7 +103,7 @@ Class Quserwrapper {
             $this.process.WaitForExit()
             $this.stdout = $this.process.StandardOutput.ReadToEnd().split([Environment]::NewLine)
             $this.stderr = $this.process.StandardError.ReadToEnd().split([Environment]::NewLine)
-            $this.evt.WriteEntry("debug_stdout: $this.stdout\ndebug_stderr: $this.stderr", [System.Diagnostics.EventLogEntryType]::Information, 110)
+            $this.evt.WriteEntry("debug_stdout: $($this.stdout)`ndebug_stderr: $($this.stderr)", [System.Diagnostics.EventLogEntryType]::Information, 110)
         }
         catch [System.Management.Automation.MethodInvocationException] {
             Write-Host "Can't find $($this.pinfo.FileName) command"
