@@ -67,9 +67,36 @@ Class Quserwrapper {
     }
 
     GetIdle() {
-        $quserRegex = $this.stdout | ForEach-Object -Process { $_ -replace '\s{2,}', ',' }
-        $quserObject = $quserRegex | ConvertFrom-Csv
-        $y = $quserObject."IDLE TIME"
+
+        $line=@"
+        USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME 
+        >administrator                             2  Disc           22  7/13/2020 3:35 AM 
+        "@
+
+        $line = $this.stdout
+
+        $Pattern = '(?x)
+        (?<idle>(\.|\d?\d?\d?\d))
+        \s+
+        (?<month>\d?\d)
+        /
+        (?<day>\d?\d)
+        /
+        (?<year>\d\d\d\d)
+        \s+
+        (?<time>\d?\d:\d\d)
+        \s+
+        (?<ampm>AM|PM)
+        '
+
+        $idle = -1
+        if ($line -match $Pattern) {
+            $s = "$($Matches['year'])-$($Matches['month'])-$($Matches['day']) $($Matches['time']) $($Matches['ampm'])"
+            $idle = $Matches['idle']
+            $logon = Get-Date $s
+        }
+
+        $y = $idle
 
         if ('.' -eq $y) {
             $this.idle = 0
