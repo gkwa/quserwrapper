@@ -88,6 +88,8 @@ Class Quserwrapper {
             $s = "$($Matches['year'])-$($Matches['month'])-$($Matches['day']) $($Matches['time']) $($Matches['ampm'])"
             $y = $Matches['idle']
             $logon = Get-Date $s
+            $this.idle = $y
+            return
         }
 
         if ('.' -eq $y) {
