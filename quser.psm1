@@ -70,7 +70,7 @@ Class Quserwrapper {
         $line = $this.stdout
 
         $Pattern = '(?x)
-        (?<idle>(\.|\d?\d?\d?\d))
+        (?<idle>\.|\d?\d?\d?\d)
         \s+
         (?<month>\d?\d)
         /
