@@ -89,14 +89,12 @@ Class Quserwrapper {
         (?<ampm>AM|PM)
         '
 
-        $idle = -1
+        $y = -1
         if ($line -match $Pattern) {
             $s = "$($Matches['year'])-$($Matches['month'])-$($Matches['day']) $($Matches['time']) $($Matches['ampm'])"
-            $idle = $Matches['idle']
+            $y = $Matches['idle']
             $logon = Get-Date $s
         }
-
-        $y = $idle
 
         if ('.' -eq $y) {
             $this.idle = 0
