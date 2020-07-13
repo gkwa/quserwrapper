@@ -67,12 +67,6 @@ Class Quserwrapper {
     }
 
     GetIdle() {
-
-        $line=@"
-        USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME 
-        >administrator                             2  Disc           22  7/13/2020 3:35 AM 
-"@
-
         $line = $this.stdout
 
         $Pattern = '(?x)
