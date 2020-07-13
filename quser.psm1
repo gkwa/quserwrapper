@@ -70,15 +70,15 @@ Class Quserwrapper {
         $line = $this.stdout
 
         $Pattern = '(?x)
-        (?<idle>\.|\d?\d?\d?\d)
+        (?<idle>\.|\d+)
         \s+
         (?<month>\d?\d)
         /
-        (?<day>\d?\d)
+        (?<day>\d+)
         /
         (?<year>\d\d\d\d)
         \s+
-        (?<time>\d?\d:\d\d)
+        (?<time>\d+:\d+)
         \s+
         (?<ampm>AM|PM)
         '
