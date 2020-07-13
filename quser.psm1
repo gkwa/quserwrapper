@@ -72,7 +72,7 @@ Class Quserwrapper {
         $Pattern = '(?x)
         (?<idle>\.|\d+)
         \s+
-        (?<month>\d?\d)
+        (?<month>\d+)
         /
         (?<day>\d+)
         /
@@ -99,7 +99,7 @@ Class Quserwrapper {
         [Int32]$number = 0
         if ([Int32]::TryParse($y, [ref]$number)) {
             $this.idle = $number
-            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
+            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 150)
             return
         }
 
