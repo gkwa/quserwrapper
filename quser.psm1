@@ -45,7 +45,6 @@ class ShutdownManager {
     }
 }
 
-
 Class Quserwrapper {
     [int]$idle = 0
     [string[]]$stdout
@@ -69,8 +68,10 @@ Class Quserwrapper {
     GetIdle() {
         $line = $this.stdout
 
+        Write-Host $line
+
         $Pattern = '(?x)
-        (?<idle>\.|\d+)
+        (?<idle>((\d+:\d+)|\.|\d+))
         \s+
         (?<month>\d+)
         /
@@ -85,6 +86,7 @@ Class Quserwrapper {
 
         $y = -1
         if ($line -match $Pattern) {
+            Write-Host $Matches
             $s = "$($Matches['year'])-$($Matches['month'])-$($Matches['day']) $($Matches['time']) $($Matches['ampm'])"
             $y = $Matches['idle']
             $logon = Get-Date $s
