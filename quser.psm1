@@ -65,62 +65,7 @@ Class Quserwrapper {
         $this.process.StartInfo = $this.pinfo
     }
 
-    GetIdle() {
-        $line = $this.stdout
-
-        Write-Host $line
-
-        $Pattern = '(?x)
-        (?<idle>((\d+:\d+)|\.|\d+))
-        \s+
-        (?<month>\d+)
-        /
-        (?<day>\d+)
-        /
-        (?<year>\d\d\d\d)
-        \s+
-        (?<time>\d+:\d+)
-        \s+
-        (?<ampm>AM|PM)
-        '
-
-        $y = -1
-        if ($line -match $Pattern) {
-            Write-Host $Matches
-            $s = "$($Matches['year'])-$($Matches['month'])-$($Matches['day']) $($Matches['time']) $($Matches['ampm'])"
-            $y = $Matches['idle']
-            $logon = Get-Date $s
-            $this.idle = $y
-            return
-        }
-
-        if ('.' -eq $y) {
-            $this.idle = 0
-            $this.evt.WriteEntry("$y interpreted as 0 minutes (currently active)", [System.Diagnostics.EventLogEntryType]::Information, 100)
-            return
-        }
-
-        [Int32]$number = 0
-        if ([Int32]::TryParse($y, [ref]$number)) {
-            $this.idle = $number
-            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 150)
-            return
-        }
-
-        try {
-            $ts = [TimeSpan]$y
-            $this.idle = $ts.TotalMinutes
-            $this.evt.WriteEntry("$y interpreted as $($this.idle) minutes", [System.Diagnostics.EventLogEntryType]::Information, 200)
-            return
-        }
-        catch {
-            $this.evt.WriteEntry("Can't cast $y into TimeSpan", [System.Diagnostics.EventLogEntryType]::Information, 300)
-        }
-
-        $this.evt.WriteEntry("Unexpected idle time $y", [System.Diagnostics.EventLogEntryType]::Information, 300)
-    }
-
-    Check() {
+    RunQuser() {
         try {
             $this.process.Start() | Out-Null
             $this.process.WaitForExit()
@@ -133,4 +78,56 @@ Class Quserwrapper {
         }
     }
 
+    [TimeSpan]GetIdle([string]$line) {
+        $Pattern = '(?x)
+        (
+            (?<d>\d+):(?<h>\d+):(?<m>\d+)
+            | (?<h>\d+):(?<m>\d+)
+            | (?<m>\d+)
+            | (?<dot>\.)
+        )
+        \s+
+        (?<month>\d+)
+        /
+        (?<day>\d+)
+        /
+        (?<year>\d\d\d\d)
+        \s+
+        (?<time>\d+:\d+)
+        \s+
+        (?<ampm>AM|PM)
+        '
+
+        $ts = New-Timespan -Hours 0
+
+        if ($line -match $Pattern) {
+            $s = "$($Matches['year'])-$($Matches['month'])-$($Matches['day']) $($Matches['time']) $($Matches['ampm'])"
+            $logon = Get-Date $s
+
+            if($Matches['d']) {
+               $z = $Matches['d']
+               $t = New-Timespan -Hours (24*([int]$z))
+               $ts += $t
+            }
+
+            if($Matches['h']) {
+               $z = $Matches['h']
+               $t = New-Timespan -Hours ([int]$z)
+               $ts += $t
+            }
+
+            if($Matches['m']) {
+               $z = $Matches['m']
+               $t = New-Timespan -Minutes ([int]$z)
+               $ts += $t
+            }
+
+            if($Matches['dot']) {
+               $z = $Matches['dot']
+               $t = New-Timespan -Seconds 0
+               $ts += $t
+            }
+        }
+        return $ts
+    }
 }
