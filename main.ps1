@@ -15,6 +15,7 @@ $ShutdownManger = New-Object ShutdownManager
 
 $qs.RunQuser()
 $idle = $qs.GetIdle($qs.stdout)
+Write-Log -Level 'DEBUG' -Message "quser stdout: $($qs.stdout)"
 Write-Log -Level 'DEBUG' -Message "You've been idle $idle minutes"
 if ($idle -gt $MaxIdle) {
     Write-Log -Level 'DEBUG' -Message "Shutdown initiated because $MaxIdle has been reached"
