@@ -12,7 +12,7 @@ class ShutdownManager {
         $this.evt = new-object System.Diagnostics.Eventlog("Application")
         $this.evt.Source = "ShutdownManager"
         $this.pinfo = New-Object System.Diagnostics.ProcessStartInfo
-        $this.pinfo.FileName = "shutdown"
+        $this.pinfo.FileName = Join-Path $pwd psshutdown.exe
         $this.pinfo.RedirectStandardError = $true
         $this.pinfo.RedirectStandardOutput = $true
         $this.pinfo.UseShellExecute = $false
@@ -22,7 +22,7 @@ class ShutdownManager {
         $this.message = "shutting down in $($this.DelayTS.TotalMinutes) minutes triggered from taskschd"
     }
     shutdown() {
-        $this.pinfo.Arguments = "-t $($this.DelayTS.TotalSeconds) -s" 
+        $this.pinfo.Arguments = "-t $($this.DelayTS.TotalSeconds) -s"
         $this.process.Start() | Out-Null
         $this.stdout = $this.process.StandardOutput.ReadToEnd()
         $this.stderr = $this.process.StandardError.ReadToEnd()

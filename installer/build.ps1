@@ -2,6 +2,7 @@ mkdir -Force Work, Output | Out-Null
 
 Copy-Item -Force product.wxs.tmpl product.wxs
 
+Copy-Item ../psshutdown.exe Work -Force
 Copy-Item ../main.ps1 Work -Force
 Copy-Item ../main.vbs Work -Force
 Copy-Item ../quser.psm1 Work -Force
